@@ -1,0 +1,8 @@
+1) nasm -fbin ModeTransfer.asm -o ModeTransfer.bin
+2) qemu-system-i386 ModeTransfer.bin
+
+Use above commands to execute Assignment 2.
+After you press you any key you will see "real mode" text.
+Then again when you press any key , "protected mode" text will be shown,
+and you will be shifted to protected mode from real mode.
+You will be in protected mode for few seconds and then the program will restart.
