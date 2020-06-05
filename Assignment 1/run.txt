@@ -4,3 +4,5 @@
 4) qemu-system-i386 result.bin
 
 Use above commands to execute Assignment 1.
+Press the same key on keyboard twice to see hello message.
+The screenshot in this folder shows how the outpit should look like.
