@@ -1,0 +1,6 @@
+1) nasm -fbin Bootloader.asm -o Bootloader.bin
+2) nasm -fbin RealModeBios.asm -o RealModeBios.bin
+3) cat Bootloader.bin RealModeBios.bin > result.bin
+4) qemu-system-i386 result.bin
+
+Use above commands to execute Assignment 1.
