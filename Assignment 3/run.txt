@@ -1,0 +1,8 @@
+1) nasm -fbin bootloader.asm -o bootloader.bin
+2) nasm -fbin matrix_transpose.asm -o matrix_transpose.bin
+3) nasm -fbin matrix_transpose.asm -o matrix_transpose.bin
+4) qemu-system-i386 result.bin 
+
+Use above commands to execute Assignment 3.
+After you press any 1 key on keyboard twice consecutively you will see 
+output which consists of a matrix and it's transpose.
