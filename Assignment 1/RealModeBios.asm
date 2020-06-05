@@ -50,7 +50,9 @@ print:
 
 SECTION .DATA	
 	msg db "Hello$"
-times 512-($-$$) db 0 ; Make it a disk sector
+times 512-($-$$) db 0 ; Make it a disk sector 
+		      ;By MIS - 111708073  Name- Utkarshbhanu Andurkar
+
 
 
 
