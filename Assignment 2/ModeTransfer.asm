@@ -97,45 +97,13 @@ ag1:    dec ecx
     	sti        
     	hlt
 
-[bits 16]
     	mov eax, cr0 
     	and eax,0x7ffffffe ; set the protected mode bit on special CPU reg cr0
-    	mov cr0, eax
-
-idt_real:
-	dw 0x3ff		; 256 entries, 4b each = 1K
-	dd 0			; Real Mode IVT @ 0x0000
- 
-savcr0:
-	dd 0			; Storage location for pmode CR0.
- 
-Entry16:
-        ; We are already in 16-bit mode here!
- 
-	cli			; Disable interrupts.
- 
- 
-	; Disable paging (we need everything to be 1:1 mapped).
-	mov eax, cr0
-	mov [savcr0], eax	; save pmode CR0
-	and eax, 0x7FFFFFFe	; Disable paging bit & disable 16-bit pmode.
-	mov cr0, eax
- 
+    	mov cr0, eax 
 	jmp 0:boot	; Perform Far jump to set CS.
 
 	
-display:
-	xor   di, di
-	.loop:
-		lodsb       ;loads byte from si into al and increases si
-		test  al, al ;tests end of string
-		jz    .end
-		
-		stosw	    ; Stores AX (char + color)
-		jmp   .loop ;print next character
 
-	.end:
-	ret
 
 msg_p db "Protected Mode",0
 msg_r   db "Real Mode", 0
